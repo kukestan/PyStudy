@@ -1,0 +1,1 @@
+python ./ascii.py --file dog.jpg --cols 100
