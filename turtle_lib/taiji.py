@@ -1,5 +1,4 @@
 import turtle
-import public.log as log
 """
 太极图案
 """
@@ -7,7 +6,6 @@ color1="cyan"
 color2="blue"
 
 def draw():
-    log.logd("画太极图案")
     turtle.speed(2)
 
     turtle.fillcolor(color1)

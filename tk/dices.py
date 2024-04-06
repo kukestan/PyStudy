@@ -1,6 +1,5 @@
 from tkinter import * # type: ignore
 from random import *  # type: ignore
-from public import log
 import tkinter.messagebox
 rudy_dice = 1
 rosser_dice = 1
@@ -25,11 +24,7 @@ def update():
     global rosser_dice
     global rudy_lock
     global rosser_lock
-    log.logd(f"rudy_lock = {rudy_lock}, \
-                 rosser_lock = {rosser_lock},", 'update()')
     if rudy_lock and rosser_lock:
-        log.logd(f"rudy_dice = {rudy_dice}, \
-                 rosser_dice = {rosser_dice}", 'update()')
         if rudy_dice > rosser_dice:
             vs.config(text = "赢", fg = "red")
         elif rudy_dice < rosser_dice:
@@ -46,7 +41,6 @@ def btnAPress():
     if not rudy_lock:
         diceA.delete(0.0, END)
         rudy_dice = randint(1, 6)
-        log.logd("rudy = %d" % rudy_dice, 'btnAPress()')
         diceA.insert(END, print_dice(rudy_dice))
         diceA.config(fg = 'red')
         rudy_lock = True
@@ -60,7 +54,6 @@ def btnBPress():
     if not rosser_lock:
         diceB.delete(0.0, END)
         rosser_dice = randint(1, 6)
-        log.logd("rosser = %d" % rosser_dice, 'btnBPress()')
         diceB.insert(END, print_dice(rosser_dice))
         diceB.config(fg = 'red')
         rosser_lock = True
